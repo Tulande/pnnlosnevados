@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Gráfico de Líneas - Evolución de Coberturas</title>
+    <!-- 1. Incluimos la librería Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 2rem;
+        }
+        .chart-container {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            height: 80vh;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+        }
+    </style>
+    <!-- Incluimos la fuente Poppins para que se vea igual de elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="chart-container">
+        <!-- 2. Este es el lienzo donde se dibujará nuestro gráfico -->
+        <canvas id="lineChart"></canvas>
+    </div>
+
+    <script>
+        // 3. Aquí empieza la lógica de JavaScript para crear el gráfico
+
+        // --- Tus datos completos ---
+        const datosMapbiomas = {
+            1985: { 3: 30964.61, 13: 63282.36, 21: 20744.88, 34: 2196.53 },
+            1990: { 3: 28911.61, 13: 58039.11, 21: 29823.26, 34: 2031.45 },
+            1995: { 3: 28911.61, 13: 58039.11, 21: 29823.26, 34: 2031.45 },
+            2000: { 3: 30373.72, 13: 57029.71, 21: 29848.09, 34: 1567.38 },
+            2005: { 3: 32524.34, 13: 56437.48, 21: 28707.59, 34: 1269.57 },
+            2010: { 3: 31577.01, 13: 60142.07, 21: 25757.27, 34: 1196.51 },
+            2011: { 3: 31236.73, 13: 60964.13, 21: 25424.98, 34: 1178.51 },
+            2012: { 3: 31011.24, 13: 61404.61, 21: 25146.47, 34: 1146.44 },
+            2013: { 3: 30979.86, 13: 61250.66, 21: 25178.73, 34: 1106.53 },
+            2014: { 3: 31757.45, 13: 59851.80, 21: 25599.08, 34: 987.87 },
+            2015: { 3: 33114.40, 13: 58331.73, 21: 25569.32, 34: 926.22 },
+            2016: { 3: 33202.81, 13: 57872.99, 21: 25990.44, 34: 877.31 },
+            2017: { 3: 33070.07, 13: 57310.89, 21: 26865.52, 34: 843.28 },
+            2018: { 3: 32825.75, 13: 57756.02, 21: 26765.82, 34: 828.23 },
+            2019: { 3: 34015.28, 13: 56638.55, 21: 26905.71, 34: 801.86 },
+            2020: { 3: 33330.42, 13: 56375.41, 21: 28024.05, 34: 748.76 },
+            2021: { 3: 34065.15, 13: 56911.78, 21: 26709.93, 34: 738.25 },
+            2022: { 3: 34570.66, 13: 57022.94, 21: 25822.50, 34: 701.19 },
+            2023: { 3: 35160.96, 13: 56902.47, 21: 25208.87, 34: 701.01 }
+        };
+
+        const paletaColores = { 3: '#1F8D49', 13: '#D89F5C', 21: '#FFEFC3', 34: '#93DFE6' };
+        const nombresClases = { 3: 'Bosque', 13: 'Páramo y otra Veg.', 21: 'Mosaico Agropecuario', 34: 'Glaciar y Nival' };
+        
+        // --- Preparación de los datos para el gráfico ---
+
+        // El eje X serán todos los años que tenemos
+        const labels = Object.keys(datosMapbiomas);
+
+        // Creamos un "dataset" (una línea) para cada una de nuestras coberturas principales
+        const datasets = Object.keys(nombresClases).map(claseId => {
+            // Para cada clase, creamos un array con su valor para cada año
+            const data = labels.map(anio => datosMapbiomas[anio][claseId] || null); // Usamos null si no hay dato
+
+            return {
+                label: nombresClases[claseId],
+                data: data,
+                borderColor: paletaColores[claseId],
+                backgroundColor: paletaColores[claseId],
+                fill: false, // No queremos relleno debajo de la línea
+                tension: 0.1 // Esto suaviza un poco las líneas
+            };
+        });
+
+        // --- Creación del Gráfico ---
+        const ctx = document.getElementById('lineChart').getContext('2d');
+        const lineChart = new Chart(ctx, {
+            type: 'line', // El tipo de gráfico
+            data: {
+                labels: labels, // Los años en el eje X
+                datasets: datasets // Las líneas de coberturas
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Evolución de las Principales Coberturas del Suelo en el PNN Los Nevados (1985-2023)',
+                        font: {
+                            size: 20,
+                            family: "'Poppins', sans-serif"
+                        }
+                    },
+                    legend: {
+                        position: 'top', // La leyenda arriba para identificar cada línea
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Área (Hectáreas)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Año'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>  
