@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metodología - Análisis PNN Los Nevados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="metodologia-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-main">Metodología del Proyecto</span>
+        <span class="logo-sub">Plataforma de Análisis PNN Los Nevados</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">← Volver a la Plataforma</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="metodologia-panel">
+      <h2>Ficha Técnica y Proceso Metodológico</h2>
+      <p class="intro-text">Este documento detalla la metodología empleada para el desarrollo de la plataforma interactiva de análisis de las transformaciones del paisaje en el PNN Los Nevados, presentada para la categoría académica del Premio MapBiomas Colombia 2025.</p>
+    </section>
+
+    <section class="metodologia-panel">
+      <h3>Resumen y Pregunta de Investigación</h3>
+      <p><strong>Pregunta de Investigación:</strong> ¿Cómo han evolucionado las coberturas del suelo en el PNN Los Nevados entre 1985 y 2023, y cómo se pueden comunicar eficazmente estas dinámicas a través de una herramienta digital interactiva?</p>
+      <p><strong>Resumen:</strong> Este proyecto presenta un aplicativo web (dashboard) que visualiza y cuantifica las transformaciones del paisaje en el Parque Nacional Natural Los Nevados utilizando la serie temporal completa (1985-2023) de la <strong>Colección 2 de MapBiomas Colombia</strong>. El objetivo principal es democratizar el acceso a esta valiosa información geoespacial, ofreciendo una herramienta intuitiva que permite a usuarios no especializados explorar los cambios en coberturas críticas como glaciares y páramos. La plataforma facilita el análisis de la distribución de coberturas por año y la comparación de la evolución temporal entre dos fechas seleccionadas, traduciendo datos complejos en estadísticas y mapas interactivos comprensibles. Este trabajo constituye una aplicación directa de los datos de MapBiomas para la educación ambiental, el soporte a la toma de decisiones y la divulgación científica.</p>
+    </section>
+
+    <section class="metodologia-panel">
+        <h3>Objetivos del Trabajo</h3>
+        <ul>
+            <li><strong>General:</strong> Desarrollar una plataforma web interactiva para visualizar y analizar los cambios de cobertura en el PNN Los Nevados entre 1985 y 2023, utilizando los datos de MapBiomas Colombia.</li>
+            <li><strong>Específicos:</strong>
+                <ul>
+                    <li>- Procesar y analizar los datos de MapBiomas para cuantificar las áreas de cada cobertura en diferentes años.</li>
+                    <li>- Diseñar una interfaz web intuitiva que permita la exploración anual y la comparación temporal de mapas y estadísticas.</li>
+                    <li>- Comunicar de forma clara y visual la magnitud de la pérdida de coberturas críticas y contextualizar los cambios observados con base en literatura científica.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="metodologia-panel">
+      <h3>Metodología</h3>
+      <p>El flujo de trabajo se dividió en tres fases principales:</p>
+      <ol>
+        <li><strong>Procesamiento de Datos Geoespaciales:</strong> La materia prima fueron los datos ráster anuales de MapBiomas Colombia. Utilizando QGIS, se realizó un pre-procesamiento para recortar los datos al límite geográfico del PNN Los Nevados. Posteriormente, para cada año de la serie, se ejecutó un análisis cuantitativo con la herramienta "Group Stats" para calcular el área (en hectáreas) de cada clase de cobertura.</li>
+        <li><strong>Desarrollo del Aplicativo Web (Frontend):</strong> Se diseñó y construyó la plataforma utilizando tecnologías web estándar (HTML5, CSS3, JavaScript) para asegurar su accesibilidad y rendimiento. La interfaz se dividió en dos módulos principales: "Explorador Anual" y "Análisis Comparativo".</li>
+        <li><strong>Integración y Visualización:</strong> Los datos cuantitativos de la Fase 1 se integraron en JavaScript para alimentar dinámicamente las estadísticas. Cada mapa anual fue exportado desde QGIS como un mapa web interactivo autónomo (usando `qgis2web`) y cargado en la plataforma mediante.</li>
+      </ol>
+    </section>
+
+    <section class="metodologia-panel">
+      <h3>Argumentación del Proyecto</h3>
+      
+      <h4>¿De qué manera es su trabajo innovador?</h4>
+      <p>La innovación de este proyecto no reside en la creación de datos primarios, sino en su <strong>traducción y democratización efectiva</strong>. Transforma la compleja y masiva colección de datos de MapBiomas en una herramienta de "inteligencia territorial" intuitiva y de libre acceso. Mientras que los datos geoespaciales suelen requerir software especializado y conocimiento técnico, esta plataforma elimina esa barrera, permitiendo que cualquier persona con una conexión a internet pueda realizar análisis exploratorios. La innovación radica en tres pilares:</p>
+      <ul>
+          <li><strong>Síntesis Visual-Analítica:</strong> Combina de forma nativa la visualización de mapas interactivos con gráficos y estadísticas cuantitativas que se actualizan dinámicamente, creando una experiencia de usuario unificada.</li>
+          <li><strong>Accesibilidad Radical:</strong> Al estar construido sobre tecnologías web básicas (HTML, CSS, JS), el aplicativo es extremadamente ligero, rápido y fácilmente replicable.</li>
+          <li><strong>Narrativa Histórica Completa:</strong> Es una de las primeras herramientas interactivas enfocadas en un área protegida de Colombia que utiliza la totalidad de la serie temporal de 38 años.</li>
+      </ul>
+
+      <h4>¿Cuál es el potencial impacto de su trabajo?</h4>
+      <p>El impacto de esta plataforma es multifacético y se dirige a varios sectores clave:</p>
+      <ul>
+          <li><strong>Educativo y Científico:</strong> Proporciona una herramienta didáctica lista para usar en aulas para explorar un caso de estudio real sobre cambio climático y uso del suelo.</li>
+          <li><strong>Políticas Públicas:</strong> Ofrece a gestores ambientales una herramienta de consulta rápida y basada en evidencia para la planificación territorial y la justificación de estrategias de conservación.</li>
+          <li><strong>Conciencia Ciudadana:</strong> Sensibiliza a la ciudadanía sobre la vulnerabilidad de su "fábrica de agua", fomentando el apoyo público a la conservación.</li>
+      </ul>
+    </section>
+
+    <section class="metodologia-panel">
+        <h3>Uso de Código y Algoritmos</h3>
+        <p>Sí, este trabajo utiliza códigos de programación. Todos los archivos (`index.html`, `style.css`, `script.js`) que componen la plataforma son públicos y constituyen el núcleo del aplicativo.
+        <br><strong>Estado:</strong> Los algoritmos o códigos de programación **son públicos y están anexados al trabajo** (al ser la propia plataforma que se entrega).
+        </p>
+    </section>
+
+    <!-- NUEVA SECCIÓN DE REFERENCIAS -->
+    <section id="referencias" class="metodologia-panel">
+        <h3>Referencias y Fuentes de Datos</h3>
+        <p>Este proyecto se fundamenta en datos y literatura científica de alta calidad. El crédito y reconocimiento a estas fuentes es fundamental.</p>
+        <div class="referencia-item">
+            <h4>Fuente de Datos Primaria</h4>
+            <p class="cita"><strong>MapBiomas – Colección 2</strong> de la Serie Anual de Mapas de Cobertura y Uso del Suelo de Colombia, consultada el 30 de Junio de 2025 a través del enlace: <a href="https://colombia.mapbiomas.org/" target="_blank">https://colombia.mapbiomas.org/</a></p>
+        </div>
+        <div class="referencia-item">
+            <h4>Referencias Bibliográficas</h4>
+            <ul>
+                <li>Ceballos, J. L., Euscátegui, C., & Tobón, C. (2006). Glacier retreat in the Cordillera Central of Colombia. <em>Annals of Glaciology, 43</em>, 80-84.</li>
+                <li>Fadrique, M., et al. (2018). A high-elevation tropical forest biome is shifting upslope in response to warming. <em>Nature, 564</em>, 202-206.</li>
+                <li>Hofstede, R., Segarra, P., & Mena, P. V. (Eds.). (2014). <em>The Páramo Ecosystem of the Northern Andes</em>. The New York Botanical Garden Press.</li>
+                <li>IDEAM. (2018). <em>Análisis de tendencias de incendios de la cobertura vegetal en Colombia, periodo 2001-2017</em>. Instituto de Hidrología, Meteorología y Estudios Ambientales.</li>
+                <li>Parques Nacionales Naturales de Colombia. (2007). <em>Documento Ejecutivo del Plan de Manejo del Parque Nacional Natural Los Nevados</em>.</li>
+            </ul>
+        </div>
+      </section>
+
+  </main>
+
+  <footer class="metodologia-footer">
+    <div class="container">
+      <p>Proyecto individual desarrollado por <strong>Johan Camilo Tulande Garcia</strong>.</p>
+      <p>Estudiante de Administración Ambiental, Universidad Tecnológica de Pereira (UTP) | <a href="https://www.linkedin.com/in/johan-camilo-tulande-garcia/" target="_blank">Perfil de LinkedIn</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

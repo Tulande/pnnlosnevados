@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análisis de Transformación | PNN Los Nevados</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <span class="logo-main">PNN Los Nevados</span>
+        <span class="logo-sub">Plataforma de Análisis Territorial</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#portada">Inicio</a></li>
+          <li><a href="#importancia">Contexto</a></li>
+          <li><a href="#explora">Explorador</a></li>
+          <li><a href="#comparador">Análisis</a></li>
+          <li><a href="#causas">Causas</a></li>
+          <li><a href="metodologia/index.html" target="_blank">Metodología</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- NUEVA SECCIÓN PORTADA -->
+    <section id="portada" class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">El Pulso de un Gigante Andino</h1>
+        <p class="hero-subtitle">El Parque Nacional Natural Los Nevados es una "fábrica de agua" vital para Colombia, pero sus ecosistemas de páramo y glaciar enfrentan una amenaza crítica por el cambio climático y la presión humana.</p>
+        
+        <div class="hero-key-stats">
+          <div class="stat-item">
+            <span class="stat-value">5,321 m</span>
+            <span class="stat-label">Altitud Máxima (Nevado del Ruiz)</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">58,300 Ha</span>
+            <span class="stat-label">Área Protegida Aproximada</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">> 2 Millones</span>
+            <span class="stat-label">Personas Dependen de su Agua</span>
+          </div>
+        </div>
+
+        <a href="#importancia" class="cta-button">Descubrir su Importancia</a>
+      </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN DE IMPORTANCIA Y CONTEXTO -->
+    <section id="importancia" class="panel animated-panel">
+        <h2>Un Ecosistema Estratégico para Colombia</h2>
+        <div class="contexto-grid">
+            <div class="contexto-texto">
+                <p>El Parque Nacional Natural Los Nevados, con un área aproximada de <strong>58,300 hectáreas</strong>, se localiza en el corazón de la Cordillera Central de Colombia. Su jurisdicción abarca los departamentos de <strong>Caldas, Risaralda, Quindío y Tolima</strong>, convirtiéndose en un eje articulador del corredor ambiental de la Ecorregión del Eje Cafetero.</p>
+                <p>Su importancia es vital: el agua que nace y se regula en este parque abastece a más de <strong>dos millones de personas</strong>. Es una "fábrica de agua" cuyo deshielo glaciar y ecosistemas de páramo alimentan 10 subcuencas y 19 corrientes que drenan hacia las dos cuencas más importantes del país: el Cauca y el Magdalena. (Fuente: PNN, Plan de Manejo, 2007).</p>
+            </div>
+            <div class="contexto-imagen">
+                <img src="img1.jpg" alt="Paisaje del Páramo en Los Nevados">
+                <p class="img-caption">Vista del ecosistema de páramo, crucial para la regulación hídrica.</p>
+            </div>
+        </div>
+        <hr class="section-divider">
+        <div class="contexto-grid reverse">
+            <div class="contexto-texto">
+                <h3>Descripción Biofísica</h3>
+                <p>El macizo del Ruiz-Tolima está constituido por ocho volcanes principales, incluyendo tres de los volcanes activos de Colombia: el Nevado del Ruiz, el Santa Isabel y el Nevado del Tolima. Con alturas que oscilan entre los 2,600 y 5,321 msnm, el parque alberga una increíble diversidad de ecosistemas de alta montaña, desde bosques altoandinos hasta páramos y la zona nival o glaciar. (Fuente: PNN, Plan de Manejo, 2007).</p>
+            </div>
+            <div class="contexto-imagen">
+                <img src="img2.jpg" alt="Nevado del Ruiz">
+                <p class="img-caption">El Nevado del Ruiz, uno de los glaciares activos del parque.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container content-wrapper">
+      <section id="explora" class="panel animated-panel">
+        <h2>Explorador Anual</h2>
+        <p>Seleccione un año para visualizar el estado de la cobertura del suelo. Analice las estadísticas y el mapa interactivo para ese momento específico.</p>
+        
+        <div class="control-group-single">
+          <label for="explora-anio">Seleccionar Año:</label>
+          <div class="select-wrapper">
+            <select id="explora-anio">
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+              <option value="2014">2014</option>
+              <option value="2013">2013</option>
+              <option value="2012">2012</option>
+              <option value="2011">2011</option>
+              <option value="2010">2010</option>
+              <option value="2005">2005</option>
+              <option value="2000" selected>2000</option>
+              <option value="1995">1995</option>
+              <option value="1990">1990</option>
+              <option value="1985">1985</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="explorador-grid">
+          <div id="tarjetas-resumen" class="grid-item"></div>
+          <div id="grafico-detalle" class="grid-item"></div>
+          <div id="mapa-container" class="grid-item">
+            <h3>Mapa de Cobertura</h3>
+            <div id="mapa-anual" class="placeholder-box"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="comparador" class="panel animated-panel">
+        <h2>Análisis Comparativo</h2>
+        <p>Visualice la evolución del parque comparando dos años lado a lado. Observe las diferencias en el paisaje y lea el análisis detallado de los cambios más significativos.</p>
+      
+        <div class="comparador-map-container">
+          <div class="mapa-container-individual">
+            <div class="control-group">
+              <label for="comparador-anio1">Año Inicial:</label>
+              <div class="select-wrapper">
+                <select id="comparador-anio1">
+                  <option value="1985" selected>1985</option>
+                  <option value="1990">1990</option>
+                  <option value="1995">1995</option>
+                  <option value="2000">2000</option>
+                  <option value="2005">2005</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                </select>
+              </div>
+            </div>
+            <div id="mapa1-placeholder" class="placeholder-box"></div>
+          </div>
+          <div class="mapa-container-individual">
+            <div class="control-group">
+              <label for="comparador-anio2">Mapa Derecho:</label>
+              <div class="select-wrapper">
+                <select id="comparador-anio2">
+                  <option value="1990">1990</option>
+                  <option value="1995">1995</option>
+                  <option value="2000">2000</option>
+                  <option value="2005">2005</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023" selected>2023</option>
+                </select>
+              </div>
+            </div>
+            <div id="mapa2-placeholder" class="placeholder-box"></div>
+          </div>
+        </div>
+      
+        <div class="comparador-analisis-inferior">
+          <h3>Análisis de Evolución de Coberturas Clave</h3>
+          <div id="analisis-texto-placeholder"></div>
+        </div>
+      </section>
+
+      <section id="causas" class="panel animated-panel">
+        <h2>Causas de los Cambios de Cobertura</h2>
+        <p>La transformación del paisaje en el PNN Los Nevados es un proceso complejo impulsado por factores tanto climáticos como antrópicos. A continuación, se presentan algunas de las causas principales documentadas en la literatura científica:</p>
+        <div class="causas-container">
+          <div class="causa-item">
+            <h4>1. Retroceso Glaciar Acelerado</h4>
+            <p>El aumento de la temperatura global es el principal impulsor de la rápida disminución de la masa glaciar en los Andes tropicales. Este fenómeno no solo reduce la cobertura de nieve y hielo, sino que también altera los regímenes hídricos aguas abajo. <br><em>(Fuente: Ceballos, J. L., et al., 2006. Glacier retreat in the Cordillera Central of Colombia. Annals of Glaciology)</em></p>
+          </div>
+          <div class="causa-item">
+            <h4>2. Expansión de la Frontera Agrícola</h4>
+            <p>La presión por tierras para ganadería y cultivo de papa ha llevado a la transformación de áreas de páramo. Aunque regulada, esta presión persiste en las zonas de influencia y fragmenta el ecosistema. <br><em>(Fuente: Hofstede, R., et al., 2014. The páramos of the world. En: The Páramo Ecosystem of the Northern Andes)</em></p>
+          </div>
+          <div class="causa-item">
+            <h4>3. Cambios en la Vegetación por Calentamiento</h4>
+            <p>El calentamiento permite que especies de zonas más bajas asciendan a altitudes que antes eran exclusivas del páramo, alterando la composición y estructura del ecosistema. <br><em>(Fuente: Fadrique, M., et al., 2018. A high-elevation tropical forest biome is shifting upslope in response to warming. Nature)</em></p>
+          </div>
+          <div class="causa-item">
+            <h4>4. Aumento de la Frecuencia de Incendios</h4>
+            <p>La frecuencia e intensidad de incendios han aumentado debido a prácticas agrícolas y a sequías más prolongadas, afectando la capacidad del páramo para regular el agua y almacenar carbono. <br><em>(Fuente: IDEAM, 2018. Análisis de tendencias de incendios de la cobertura vegetal en Colombia)</em></p>
+          </div>
+          <div class="causa-item">
+            <h4>5. Infraestructura y Turismo</h4>
+            <p>El desarrollo de vías y el turismo no planificado pueden generar impactos localizados como la compactación del suelo, la contaminación y la introducción de especies no nativas. <br><em>(Fuente: Parques Nacionales Naturales de Colombia, 2007. Plan de Manejo PNN Los Nevados)</em></p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer id="creditos">
+    <div class="container">
+      <p>Un proyecto de <strong>Johan Camilo Tulande Garcia</strong> para el Premio MapBiomas Colombia 2025.</p>
+      <p>Datos por <a href="https://colombia.mapbiomas.org/" target="_blank" rel="noopener noreferrer">MapBiomas Colombia</a>. | © 2025</p>
+    </div>
+  </footer>
+
+  <script defer src="script.js"></script>
+</body>
+</html>
